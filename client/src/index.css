@@ -1,0 +1,161 @@
+/*index.css Jongho Baek 301070931 24.09.17*/
+:root {
+   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   line-height: 1.5;
+   font-weight: 400;
+   color-scheme: light dark;
+   color: rgba(255, 255, 255, 0.87);
+   background-color: #000000;
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+   font-weight: 500;
+   color: #3138ae;
+   text-decoration: inherit;
+  }
+  a:hover {
+   color: #7d0cc3;
+  }
+  body {
+   margin: 0;
+  
+   place-items: center;
+   min-width: 320px;
+   min-height: 100vh;
+  }
+  h1 {
+   font-size: 3.2em;
+   line-height: 1.0;
+   display: flex;
+  }
+
+  img { 
+   width: 50px;
+   height: 50px;
+   padding-top: 5px;
+   padding-left: 5px;
+  }
+  #home1 {
+   width:100%;
+   height:500px;
+  }
+  #homehr1 {
+   height: 10px;
+   background-color: #22374a;
+   border: none;
+  }
+  #homehr2 {
+   height: 20px;
+   background-color: #14202b;
+   border: none;
+  }
+  #homehr3 {
+   height: 30px;
+   background-color: #0b1218;
+   border: none;
+  }
+  #homeh2 {
+   font-size: 85px;
+   text-align: center;
+   background-color: #0b1218;
+   color: #f6f3ee;
+   margin: 0%;
+   padding: 5%;
+  }
+  #homeh1 {
+   font-size: 125px;
+   text-align: left;
+   display: block;
+   margin: 0%;
+   margin-top: 3% ;
+   padding: 0%;
+  }
+  #layerlink1 {
+   font-size: 20px;
+  }
+  #projectimg1 {
+   width: 100%;
+   height: auto;
+   padding: 0%;
+   margin: 0%;
+  }
+  #projecth2 {
+   text-align: center;
+   display: block;
+   font-size: 25px;
+  }
+  #contacth1{
+   font-size: 50px;
+   display: block;
+   margin: 2%;
+  }
+  #contacth2{
+   font-size: 75px;
+   text-align: center;
+   display: block;
+   margin: 1%;
+  }
+  #contactblock {
+   font-size: 30px;
+   display: block;
+  }
+  #aboutdiv1 {
+   display: flex;
+  }
+  #aboutimg1 {
+   width: 30%;
+   height: auto;
+   padding-left: 3%;
+   padding-top: 3%;
+  }
+  #abouth2 {
+   font-size: 30px;
+   text-align: left;
+   width: 70%;
+   padding-left: 3%;
+   padding-top: 3%;
+  }
+  #abouth3 {
+   font-size: 20px;
+   width: 70%;
+   padding-right: 3%;
+   padding-top: 3%;
+  }
+  button {
+   border-radius: 8px;
+   border: 1px solid transparent;
+   padding: 0.6em 1.2em;
+   font-size: 1em;
+   font-weight: 500;
+   font-family: inherit;
+   background-color: #1a1a1a;
+   cursor: pointer;
+   transition: border-color 0.25s;
+  }
+  button:hover {
+   border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+   outline: 4px auto -webkit-focus-ring-color;
+  }
+  @media (prefers-color-scheme: light) {
+   :root {
+    color: #213547;
+    background-color: #f0e9df;
+   }
+   a:hover {
+    color: #747bff;
+   }
+   button {
+    background-color: #f9f9f9;
+   }
+  }
+  nav {
+  float:right;
+  font-size:x-large;
+  }
+  

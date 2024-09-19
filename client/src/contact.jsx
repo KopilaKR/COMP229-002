@@ -8,6 +8,7 @@ export default function Contact() {
         <hr id='homehr2'></hr>
         <hr id='homehr3'></hr>  
       <h2 id='contacth2'>CONTACT FORM</h2>
+      <form id="ffp">
         <label id="contactblock" for="name">Your Name: </label><input id="name" type="text" name="name"></input>
         <label id="contactblock" for="Phone">Your Phone Number: </label><input id="Phone" type="text" name="Phone"></input>
         <label id="contactblock" for="Email">Your Email: </label><input id="Email" type="text" name="Email"></input>
@@ -17,6 +18,7 @@ export default function Contact() {
         </fieldset>
         <input type="submit" value="Submit"></input>
         <input type="reset" value="Reset"></input>
+        </form>
         </main>
         
        </>

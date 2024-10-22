@@ -41,7 +41,8 @@ error: "Could not retrieve contact"
 }
 }
 const read = (req, res) => {
-req.contact = undefined 
+req.contact.hashed_password = undefined;
+req.contact.salt = undefined;
 return res.json(req.contact) 
 }
 const update = async (req, res) => { 

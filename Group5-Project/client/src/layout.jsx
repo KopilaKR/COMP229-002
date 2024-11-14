@@ -13,7 +13,7 @@ const Layout = ({ loggedIn, onLogout, onDelete, isAdmin }) => {
           <Link to="/about">About</Link> | 
           <Link to="/services">Services</Link> | 
           {loggedIn && <Link to="/contacts">Contacts</Link>}
-          {isAdmin && <Link to="/contactlist">Contact List</Link>} {/* 관리자 링크 추가 */}
+          {isAdmin && <Link to="/contactlist">Contact List</Link>}
           {!loggedIn && <Link to="/signup">Sign Up</Link>}
           {!loggedIn && <Link to="/signin">Sign In</Link>}
           {loggedIn && <Logout onLogout={onLogout} />}

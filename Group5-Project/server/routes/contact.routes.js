@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/api/contacts')
   .post(contactCtrl.create)
-  .get(authCtrl.requireSignin, authCtrl.isAdmin, contactCtrl.list); // 관리자 권한 추가
+  .get(authCtrl.requireSignin, authCtrl.isAdmin, contactCtrl.list);
 
 router.param('contactId', contactCtrl.contactByID);
 router.route('/api/contacts/:contactId')

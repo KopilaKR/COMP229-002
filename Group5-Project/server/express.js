@@ -19,8 +19,6 @@ app.use(cookieParser());
 app.use(compress());
 app.use(helmet());
 app.use(cors());
-
-// 라우트 설정
 app.use('/', userRoutes);
 app.use('/', contactRoutes);
 app.use('/auth', authRoutes);

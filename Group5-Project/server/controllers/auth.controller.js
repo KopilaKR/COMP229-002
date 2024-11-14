@@ -14,7 +14,8 @@ const signup = async (req, res) => {
       return res.status('400').json({ error: 'Email is already taken' });
     }
 
-    const newUser = new User(req.body);
+    const { name, email, password, role } = req.body;
+    const newUser = new User({ name, email, password, role: role || 'user' });
     await newUser.save({ session });
 
     await session.commitTransaction();
@@ -37,12 +38,12 @@ const signin = async (req, res) => {
       return res.status('401').json({ error: 'Email and password don\'t match' });
     }
 
-    const token = jwt.sign({ _id: user._id }, config.jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign({ _id: user._id, role: user.role }, config.jwtSecret, { expiresIn: '1h' });
     res.cookie('t', token, { httpOnly: true });
 
     return res.json({
       token,
-      user: { _id: user._id, name: user.name, email: user.email }
+      user: { _id: user._id, name: user.name, email: user.email, role: user.role }
     });
   } catch (err) {
     return res.status('401').json({ error: 'Could not sign in' });
@@ -67,6 +68,14 @@ const requireSignin = (req, res, next) => {
   }
 };
 
+const isAdmin = (req, res, next) => {
+  if (req.auth && req.auth.role === 'admin') {
+    next();
+  } else {
+    return res.status('403').json({ error: 'Admin access required' });
+  }
+};
+
 const deleteAccount = async (req, res) => { 
   try { 
     const userId = req.auth._id; 
@@ -74,12 +83,15 @@ const deleteAccount = async (req, res) => {
     res.clearCookie('t'); 
     return res.status('200').json({ message: 'Account deleted successfully' }); 
   } catch (err) { 
-    return res.status('500').json({ error: 'Could not delete account' }); } 
-  };
+    return res.status('500').json({ error: 'Could not delete account' }); 
+  }
+};
+
 export default {
   signup,
   signin,
   signout,
   requireSignin,
-  deleteAccount
+  deleteAccount,
+  isAdmin
 };

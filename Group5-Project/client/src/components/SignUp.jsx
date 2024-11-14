@@ -5,6 +5,7 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -15,14 +16,14 @@ const SignUp = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, role: isAdmin ? 'admin' : 'user' }),
       });
-  
+
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || 'Unknown error');
       }
-  
+
       const result = await response.json();
       if (response.status === 200) {
         navigate('/signin');
@@ -33,7 +34,7 @@ const SignUp = () => {
       console.error('Error signing up:', err);
       alert(err.message);
     }
-  };  
+  };
 
   return (
     <div>
@@ -50,6 +51,14 @@ const SignUp = () => {
         <div>
           <label>Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <div>
+          <label>Admin</label>
+          <input
+            type="checkbox"
+            checked={isAdmin}
+            onChange={(e) => setIsAdmin(e.target.checked)}
+          />
         </div>
         <button type="submit">Sign Up</button>
       </form>

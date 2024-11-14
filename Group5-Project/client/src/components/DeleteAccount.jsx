@@ -29,7 +29,7 @@ const DeleteAccount = ({ onDelete }) => {
     }
   };
 
-  return <button onClick={handleDelete}>Delete Account</button>;
+  return <a href="#" onClick={handleDelete}>Delete Account</a>;
 };
 
 export default DeleteAccount;

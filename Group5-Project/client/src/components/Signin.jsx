@@ -25,7 +25,7 @@ const SignIn = ({ onLogin }) => {
       const result = await response.json();
       if (response.status === 200) {
         localStorage.setItem('token', result.token);
-        onLogin();
+        onLogin(result.user.role); // 역할 정보를 onLogin에 전달
         navigate('/contacts');
       } else {
         alert(result.error);

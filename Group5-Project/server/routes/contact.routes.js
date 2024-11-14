@@ -1,10 +1,13 @@
 import express from 'express';
 import contactCtrl from '../controllers/contact.controller.js';
+import authCtrl from '../controllers/auth.controller.js';
 
 const router = express.Router();
+
 router.route('/api/contacts')
   .post(contactCtrl.create)
-  .get(contactCtrl.list);
+  .get(authCtrl.requireSignin, authCtrl.isAdmin, contactCtrl.list); // 관리자 권한 추가
+
 router.param('contactId', contactCtrl.contactByID);
 router.route('/api/contacts/:contactId')
   .get(contactCtrl.read)

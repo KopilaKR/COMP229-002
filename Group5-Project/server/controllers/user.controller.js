@@ -3,7 +3,6 @@ import extend from 'lodash/extend.js';
 import errorHandler from './error.controller.js';
 
 const create = async (req, res) => {
-  // 중복 이메일 체크를 제거하고, 인증 로직은 auth.controller.js에서 처리
   const user = new User(req.body);
   try {
     await user.save();

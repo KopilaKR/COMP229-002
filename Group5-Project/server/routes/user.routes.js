@@ -5,7 +5,7 @@ import authCtrl from '../controllers/auth.controller.js';
 const router = express.Router();
 
 router.route('/api/users')
-  .post(authCtrl.signup) // 기존 userCtrl.create를 authCtrl.signup으로 변경
+  .post(authCtrl.signup)
   .get(userCtrl.list);
 
 router.param('userId', userCtrl.userByID);

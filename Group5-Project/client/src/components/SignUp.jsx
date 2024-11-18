@@ -5,18 +5,27 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [adminPassword, setAdminPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (adminPassword && adminPassword !== 'ADMINAUTH') {
+      setError('Invalid admin authorization code.');
+      return;
+    }
+
+    const role = adminPassword === 'ADMINAUTH' ? 'admin' : 'user';
+
     try {
       const response = await fetch('http://localhost:3000/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password, role: isAdmin ? 'admin' : 'user' }),
+        body: JSON.stringify({ name, email, password, role }),
       });
 
       if (!response.ok) {
@@ -53,13 +62,15 @@ const SignUp = () => {
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div>
-          <label>Admin</label>
+          <label>Admin Authorization</label>
           <input
-            type="checkbox"
-            checked={isAdmin}
-            onChange={(e) => setIsAdmin(e.target.checked)}
+            type="password"
+            value={adminPassword}
+            onChange={(e) => setAdminPassword(e.target.value)}
           />
+          <p>Enter "ADMINAUTH" to create an admin account</p>
         </div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <button type="submit">Sign Up</button>
       </form>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/index.css'
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -46,7 +47,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div id='SignUp'>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>

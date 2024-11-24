@@ -37,7 +37,7 @@ const SignIn = ({ onLogin }) => {
   };
 
   return (
-    <div>
+    <div id='SignIn'>
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
         <div>

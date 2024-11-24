@@ -56,20 +56,20 @@ const ContactList = () => {
   };
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="error">Error: {error}</div>;
   }
 
   return (
-    <div>
+    <div className="contact-list">
       <h2>All Contacts</h2>
       <ul>
         {contacts.map((contact) => (
-          <li key={contact._id}>
+          <li key={contact._id} className="contact-item">
             <h3>{contact.typeOfService}</h3>
             <p>{contact.firstname} {contact.lastname}</p>
             <p>{contact.email}</p>
             <p>{contact.comments}</p>
-            <button onClick={() => deleteContact(contact._id)}>Delete</button>
+            <button onClick={() => deleteContact(contact._id)} className="delete-button">Delete</button>
           </li>
         ))}
       </ul>

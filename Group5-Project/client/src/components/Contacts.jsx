@@ -43,7 +43,7 @@ const Contacts = () => {
     <>
       <main>
         <h1>Contact Page</h1>
-        <form onSubmit={handleSubmit(submitForm)}>
+        <form className="contact-form" onSubmit={handleSubmit(submitForm)}>
           <label htmlFor="typeOfService">Type of Service:</label>
           <select 
             {...register("typeOfService", { required: "Type of service is required" })}
@@ -51,10 +51,10 @@ const Contacts = () => {
             onChange={handleChange('typeOfService')}
           >
             <option value="">Select a service...</option>
-            <option value="test1">test1</option>
-            <option value="test2">test2</option>
-            <option value="test3">test3</option>
-            <option value="test4">test4</option>
+            <option value="test1">Mural Commissions</option>
+            <option value="test2">Interior Artworks</option>
+            <option value="test3">Event Live Painting</option>
+            <option value="test4">Custom Designs</option>
           </select>
           {errors.typeOfService && <p>{errors.typeOfService.message}</p>}
           <br /><br />

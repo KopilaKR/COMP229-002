@@ -8,7 +8,7 @@ const Layout = ({ loggedIn, onLogout, onDelete, isAdmin }) => {
     <>
       <div>
         <div id='divImg'>
-        <img src="../public/favicon.png" alt="XTOMIC Logo" /><h1 id='company-name'>XTOMIC INC.</h1>
+        <img src="./favicon.png" alt="XTOMIC Logo" /><h1 id='company-name'>XTOMIC INC.</h1>
         </div>
         <nav>
            <Link to="/home">Home</Link>  

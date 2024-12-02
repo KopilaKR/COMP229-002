@@ -9,13 +9,17 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "babel-loader": "^9.2.1",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "gh-pages": "^6.2.0"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
-    "build": "vite build",
+    "dev": "concurrently \"cd client && vite\" \"nodemon server.js\"",
+    "build:client": "cd client && vite build",
+    "build:server": "nodemon server.js build",
+    "build": "npm run build:client && npm run build:server",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "cd client && vite preview",
+    "deploy": "cd client && npm run deploy"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

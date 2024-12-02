@@ -5,19 +5,14 @@
   "main": "index.js",
   "author": "Blessing",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
-    "babel-loader": "^9.2.1",
-    "nodemon": "^3.1.7"
+  "scripts": {
+    "dev": "concurrently \"yarn start-client\" \"nodemon server.js\"",
+    "start-client": "cd client && yarn dev",
+    "build": "cd client && yarn build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "cd client && yarn preview",
+    "start": "node server.js"  // 여기에 Start 스크립트를 추가했습니다
   },
- "scripts": {
-  "dev": "concurrently \"vite --cwd client\" \"nodemon server.js\"",
-  "build": "vite build --cwd client",
-  "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview --cwd client",
-  "start": "node server.js"
-},
   "dependencies": {
     "body-parser": "^1.20.3",
     "compression": "^1.7.4",
@@ -31,6 +26,13 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "method-override": "^3.0.0",
-    "mongoose": "^8.7.1"
+    "mongoose": "^8.7.1",
+    "concurrently": "^9.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^9.2.1",
+    "nodemon": "^3.1.7"
   }
 }

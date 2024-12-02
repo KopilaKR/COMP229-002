@@ -9,8 +9,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "babel-loader": "^9.2.1",
-    "nodemon": "^3.1.7",
-    "gh-pages": "^6.2.0"
+    "nodemon": "^3.1.7"
   },
   "scripts": {
     "dev": "concurrently \"cd client && vite\" \"nodemon server.js\"",
@@ -18,8 +17,7 @@
     "build:server": "nodemon server.js build",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "cd client && vite preview",
-    "deploy": "cd client && npm run deploy"
+    "preview": "cd client && vite preview"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

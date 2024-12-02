@@ -1,0 +1,562 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #017301;
+    color: #FFF;
+    background-image: url('/BackgroundImage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#divImg {
+    display: flex;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    background-color: #0c722e;
+}
+
+img {
+    margin-left: 20px;
+}
+
+#company-name {
+    margin-left: 100px;
+    align-content: center;
+    font-size: 60px;
+    color: #000000;
+    font-family: serif;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #017301;
+    border-bottom: 2px solid #FFFFFF;
+    border-top: 2px solid #FFFFFF;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    flex: 1;
+    text-align: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #FFFF;
+    color: black;
+}
+
+/* Home Section */
+.home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+
+.home-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #017301;
+}
+
+.home-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.featured-projects {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(45% - 40px);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project h3 {
+    color: #017301;
+    margin-top: 10px;
+}
+
+.project p {
+    color: #333333;
+}
+
+#SignUp {
+    background-color: #FFFFFF;
+    margin-left: 420px;
+    margin-right: 420px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding-top: 10px;
+    color: black;
+}
+
+#SignUp h2 {
+    color: black;
+    margin-left: 10px;
+}
+
+#SignUp > * {
+    text-align: center;
+    margin-left: -700px;
+}
+
+#SignUp button {
+    margin-top: -20px;
+    margin-bottom: 30px;
+    margin-left: 700px;
+}
+
+#SignIn {
+    background-color: #FFFFFF;
+    margin-left: 520px;
+    margin-right: 520px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding-top: 10px;
+}
+
+#SignIn h2 {
+    color: black;
+    margin-left: 0px;
+}
+
+#SignIn > * {
+    text-align: center;
+    margin-left: -700px;
+}
+
+#SignIn button {
+    margin-top: -10px;
+    margin-bottom: 30px;
+    margin-left: 700px;
+}
+
+form div {
+    margin-bottom: 15px;
+    margin-left: 500px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 190px;
+    border: 2px solid black;
+}
+
+label {
+    display: block;
+    margin-bottom: -30px;
+    font-weight: bold;
+    color: black;
+    margin-left: -330px;
+}
+
+main {
+    background-color: #FFFFFF;
+    margin-left: 520px;
+    margin-right: 520px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding-top: 10px;
+}
+
+.contact-form label {
+    margin-left: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: black;
+    color: white;
+    border: 3px solid #017301;
+    cursor: pointer;
+    width: 240px;
+    margin-left: 735px;
+    padding-top: 10px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact-form button[type="submit"] {
+    color: white;
+    background-color: black;
+    width: 130px;
+    margin-left: 220px;
+    border-radius: 6px;
+}
+
+.contact-form button[type="button"] {
+    color: white;
+    background-color: black;
+    border: 3px solid #017301;
+    width: 130px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    border-radius: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* About Us Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+    color: #333333;
+}
+
+.content-wrapper {
+    max-width: 800px;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    color: #017301;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    color: #017301;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.mission-image, .vision-image, .team-image, .contact-image {
+    margin: 20px 0;
+}
+
+.mission-image img, .vision-image img, .team-image img, .contact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Services Section */
+.services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+    color: #333333;
+}
+
+.services-section .content-wrapper {
+    max-width: 800px;
+}
+
+.services-section h1 {
+    font-size: 48px;
+    color: #017301;
+    margin-bottom: 20px;
+}
+
+.services-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.services-section .service {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .service h2 {
+    font-size: 32px;
+    color: #017301;
+    margin-bottom: 15px;
+}
+
+.services-section .service p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Signin & Signup Section */
+.signin-section, .signup-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+    color: #333333;
+}
+
+.signin-section h1, .signup-section h1 {
+    font-size: 48px;
+    color: #017301;
+    margin-bottom: 20px;
+}
+
+.signin-section p, .signup-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.signin-section form, .signup-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signin-section input, .signup-section input, .signin-section button, .signup-section button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #017301; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.signin-section button, .signup-section button {
+    background-color: #017301;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signin-section button:hover, .signup-section button:hover {
+    background-color: #004d1a;
+}
+
+/* Contact List Section */
+.contact-list {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+    padding: 40px;
+    text-align: center;
+    color: #333333;
+}
+
+.contact-list h2 {
+    font-size: 48px;
+    color: #017301;
+    margin-bottom: 20px;
+}
+
+.contact-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-item {
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    text-align: left;
+}
+
+.contact-item h3 {
+    font-size: 32px;
+    color: #017301;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.delete-button {
+    background-color: #017301;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #004d1a;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 20px;
+}
+
+/* ContactList Section */
+.contact-list {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+    padding: 40px;
+    text-align: center;
+    color: #333333;
+}
+
+.contact-list h2 {
+    font-size: 48px;
+    color: #017301;
+    margin-bottom: 20px;
+}
+
+.contact-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-item {
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    text-align: left;
+}
+
+.contact-item h3 {
+    font-size: 32px;
+    color: #017301;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.delete-button {
+    background-color: #017301;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #004d1a;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 20px;
+}

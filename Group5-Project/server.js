@@ -4,6 +4,8 @@ dotenv.config();
 import config from './config/config.js';
 import app from './server/express.js';
 import mongoose from 'mongoose';
+import path from 'path';
+const __dirname = path.resolve();
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongoUri)
@@ -16,6 +18,12 @@ mongoose.connection.on('error', () => {
 
 app.get("/", (req, res) => {
   res.json({ message: "COMP229-002 GROUP5 Backend" });
+});
+
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
 app.listen(config.port, (err) => {

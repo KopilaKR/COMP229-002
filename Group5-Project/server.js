@@ -16,14 +16,14 @@ mongoose.connection.on('error', () => {
   throw new Error(`Unable to connect to database: ${config.mongoUri}`);
 });
 
-app.get("/", (req, res) => {
-  res.json({ message: "COMP229-002 GROUP5 Backend" });
-});
-
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+
+app.get("/", (req, res) => {
+  res.json({ message: "COMP229-002 GROUP5 Backend" });
 });
 
 app.listen(config.port, (err) => {

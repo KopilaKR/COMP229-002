@@ -9,7 +9,7 @@
     "dev": "concurrently \"cd client && yarn dev\" \"nodemon server.js\"",
     "prebuild": "cd client && yarn add vite",
     "build": "cd client && yarn build",
-    "start": "yarn prebuild && yarn build && node server.js"
+    "postbuild": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

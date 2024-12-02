@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "concurrently \"cd client && yarn dev\" \"nodemon server.js\"",
     "prebuild": "cd client && yarn add vite",
-    "build": "yarn prebuild && cd client && yarn build",
-    "start": "concurrently \"yarn build\" \"node server.js\""
+    "build": "cd client && yarn add vite && yarn build",
+    "start": "yarn build && node server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

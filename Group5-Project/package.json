@@ -11,12 +11,13 @@
     "babel-loader": "^9.2.1",
     "nodemon": "^3.1.7"
   },
-  "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
-    "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
+ "scripts": {
+  "dev": "concurrently \"vite --cwd client\" \"nodemon server.js\"",
+  "build": "vite build --cwd client",
+  "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+  "preview": "vite preview --cwd client",
+  "start": "node server.js"
+},
   "dependencies": {
     "body-parser": "^1.20.3",
     "compression": "^1.7.4",

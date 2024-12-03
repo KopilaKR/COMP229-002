@@ -13,7 +13,7 @@ const Contacts = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const submitForm = () => {
+  const submitForm = async () => {
     const contact = {
       typeOfService: values.typeOfService || undefined,
       firstname: values.firstname || undefined,
@@ -22,7 +22,13 @@ const Contacts = () => {
       comments: values.comments || undefined,
     };
     console.log(contact);
-    create(contact);
+    try {
+      const result = await create(contact);
+      console.log('Contact created successfully:', result);
+      resetForm();
+    } catch (err) {
+      console.error('Error creating contact:', err);
+    }
   };
 
   const handleChange = name => event => {

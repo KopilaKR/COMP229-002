@@ -8,9 +8,16 @@ const create = async (contact) => {
       },
       body: JSON.stringify(contact)
     });
-    return await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    let data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    console.error('Failed to create contact:', err);
+    throw err; // Re-throw the error for further handling
   }
 };
 
@@ -20,9 +27,16 @@ const list = async (signal) => {
       method: 'GET',
       signal: signal
     });
-    return await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    let data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    console.error('Failed to fetch contacts:', err);
+    throw err;
   }
 };
 
@@ -37,9 +51,16 @@ const read = async (params, credentials, signal) => {
         'Authorization': 'Bearer ' + credentials.t
       }
     });
-    return await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    let data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    console.error('Failed to read contact:', err);
+    throw err;
   }
 };
 
@@ -54,9 +75,16 @@ const update = async (params, credentials, contact) => {
       },
       body: JSON.stringify(contact)
     });
-    return await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    let data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    console.error('Failed to update contact:', err);
+    throw err;
   }
 };
 
@@ -70,9 +98,16 @@ const remove = async (params, credentials) => {
         'Authorization': 'Bearer ' + credentials.t
       }
     });
-    return await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    let data = await response.json();
+    return data;
   } catch (err) {
-    console.log(err);
+    console.error('Failed to delete contact:', err);
+    throw err;
   }
 };
 

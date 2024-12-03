@@ -13,7 +13,12 @@ const create = async (contact) => {
       throw new Error('Network response was not ok');
     }
 
-    let data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error('Empty response');
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (err) {
     console.error('Failed to create contact:', err);
@@ -32,7 +37,12 @@ const list = async (signal) => {
       throw new Error('Network response was not ok');
     }
 
-    let data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error('Empty response');
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (err) {
     console.error('Failed to fetch contacts:', err);
@@ -56,7 +66,12 @@ const read = async (params, credentials, signal) => {
       throw new Error('Network response was not ok');
     }
 
-    let data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error('Empty response');
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (err) {
     console.error('Failed to read contact:', err);
@@ -80,7 +95,12 @@ const update = async (params, credentials, contact) => {
       throw new Error('Network response was not ok');
     }
 
-    let data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error('Empty response');
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (err) {
     console.error('Failed to update contact:', err);
@@ -103,7 +123,12 @@ const remove = async (params, credentials) => {
       throw new Error('Network response was not ok');
     }
 
-    let data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error('Empty response');
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (err) {
     console.error('Failed to delete contact:', err);

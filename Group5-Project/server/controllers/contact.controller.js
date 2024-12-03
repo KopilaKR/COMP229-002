@@ -6,9 +6,7 @@ const create = async (req, res) => {
   const contact = new Contact(req.body);
   try {
     await contact.save();
-    return res.status(200).json({
-      message: "Successfully created!"
-    });
+    return res.status(201).json(contact);
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)
